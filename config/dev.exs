@@ -1,5 +1,8 @@
 use Mix.Config
 
+config :elixir_todo,
+  redis_host: "127.0.0.1"
+
 # Configure your database
 config :elixir_todo, ElixirTodo.Repo,
   username: "training_user",

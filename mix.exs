@@ -45,6 +45,7 @@ defmodule ElixirTodo.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:guardian, "~> 1.2"},
       {:argon2_elixir, "~> 2.0"},
+      {:poolboy, "~> 1.5.1"},
       {:redix, "0.10.2"}
     ]
   end

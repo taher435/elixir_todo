@@ -14,7 +14,7 @@ defmodule ElixirTodo.Application do
       ElixirTodoWeb.Endpoint,
       # Starts a worker by calling: ElixirTodo.Worker.start_link(arg)
       # {ElixirTodo.Worker, arg},
-      # ElixirTodoWeb.RedisClient
+      { Redix, host: Application.get_env(:elixir_todo, :redis_host), name: :redix },
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
