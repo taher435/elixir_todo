@@ -106,7 +106,8 @@ defmodule ElixirTodo.UserManager do
     query = from u in User, where: u.username == ^username
 
     case Repo.one(query) do
-      nil -> {:error, :invalid_credentials}
+      nil ->
+        {:error, :invalid_credentials}
       user ->
         if Argon2.verify_pass(plain_password, user.password) do
           {:ok, user}

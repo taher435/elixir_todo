@@ -11,9 +11,10 @@ defmodule ElixirTodo.Application do
       # Start the Ecto repository
       ElixirTodo.Repo,
       # Start the endpoint when the application starts
-      ElixirTodoWeb.Endpoint
+      ElixirTodoWeb.Endpoint,
       # Starts a worker by calling: ElixirTodo.Worker.start_link(arg)
       # {ElixirTodo.Worker, arg},
+      # ElixirTodoWeb.RedisClient
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

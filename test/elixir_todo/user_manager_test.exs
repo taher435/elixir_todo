@@ -6,8 +6,8 @@ defmodule ElixirTodo.UserManagerTest do
   describe "users" do
     alias ElixirTodo.UserManager.User
 
-    @valid_attrs %{password: "some password", username: "some username"}
-    @update_attrs %{password: "some updated password", username: "some updated username"}
+    @valid_attrs %{password: "some password", username: "some username", name: "some user", email: "user@example.com"}
+    @update_attrs %{password: "some updated password", username: "some updated username", name: "some user", email: "user@example.com"}
     @invalid_attrs %{password: nil, username: nil}
 
     def user_fixture(attrs \\ %{}) do
@@ -31,7 +31,7 @@ defmodule ElixirTodo.UserManagerTest do
 
     test "create_user/1 with valid data creates a user" do
       assert {:ok, %User{} = user} = UserManager.create_user(@valid_attrs)
-      assert user.password == "some password"
+      assert {:ok, user} == Argon2.check_pass(user, "some password", hash_key: :password)
       assert user.username == "some username"
     end
 
@@ -42,7 +42,7 @@ defmodule ElixirTodo.UserManagerTest do
     test "update_user/2 with valid data updates the user" do
       user = user_fixture()
       assert {:ok, %User{} = user} = UserManager.update_user(user, @update_attrs)
-      assert user.password == "some updated password"
+      assert {:ok, user} == Argon2.check_pass(user, "some updated password", hash_key: :password)
       assert user.username == "some updated username"
     end
 

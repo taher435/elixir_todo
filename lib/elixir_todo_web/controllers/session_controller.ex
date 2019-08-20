@@ -9,7 +9,7 @@ defmodule ElixirTodoWeb.SessionController do
     user = Guardian.Plug.current_resource(conn)
 
     if user do
-      redirect(conn, to: "/tasks")
+      redirect(conn, to: Routes.task_path(conn, :index))
     else
       conn
       |> assign(:changeset, changeset)
@@ -27,7 +27,7 @@ defmodule ElixirTodoWeb.SessionController do
     conn
     |> put_flash(:info, "Welcome #{user.name}")
     |> Guardian.Plug.sign_in(user)
-    |> redirect(to: "/tasks")
+    |> redirect(to: Routes.task_path(conn, :index))
   end
 
   defp login_handler({:error, reason}, conn) do

@@ -1,0 +1,17 @@
+<div>
+  <div style="width: 35%; display: inline-block"><strong>Title</strong></div>
+  <div style="width: 30%; display: inline-block"><strong>Due Date</strong></div>
+  <div style="width: 20%; display: inline-block"><strong>Status</strong></div>
+</div>
+<ul style="list-style: none;">
+  <%= Enum.map @tasks, fn task -> %>
+  <li>
+    <div style="width: 35%; display: inline-block"><%= task.title %></div>
+    <div style="width: 30%; display: inline-block"><%= task.due_date %></div>
+    <div style="width: 20%; display: inline-block"><%= task.status |> String.capitalize %></div>
+    <%= link "Edit", to: "/tasks/#{task.id}/edit", style: "width: 15%" %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link "Create Task", to: "/tasks/new" %>

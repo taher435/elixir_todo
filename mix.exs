@@ -20,7 +20,7 @@ defmodule ElixirTodo.MixProject do
   def application do
     [
       mod: {ElixirTodo.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :redix]
     ]
   end
 
@@ -44,7 +44,8 @@ defmodule ElixirTodo.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:guardian, "~> 1.2"},
-      {:argon2_elixir, "~> 2.0"}
+      {:argon2_elixir, "~> 2.0"},
+      {:redix, "0.10.2"}
     ]
   end
 

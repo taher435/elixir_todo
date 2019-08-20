@@ -29,6 +29,11 @@ config :elixir_todo, ElixirTodo.UserManager.Guardian,
   issuer: "elixir_todo",
   secret_key: "48sslLhlnVpc9qz9PZ+H1yNy6pPUMzAZHcaJWADYrOJ76km5yo4TKxHvcAO+8y+/"
 
+config :redis_client,
+  redis_host: "127.0.0.1",
+  redis_password: "",
+  redis_port: 6379
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

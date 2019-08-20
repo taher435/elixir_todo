@@ -2,10 +2,10 @@ use Mix.Config
 
 # Configure your database
 config :elixir_todo, ElixirTodo.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "elixir_todo_test",
-  hostname: "localhost",
+username: "training_user",
+password: "Training123",
+database: "todo_db_test",
+hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
