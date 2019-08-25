@@ -2,6 +2,20 @@
 
 This is a sample Elixir application built for the purpose of teaching Elixir to those who are interested in learning the language along with Phoenix Framework.
 
+# Prerequisite
+
+You need to have following installed before you can run an Elixir application in your local machine.
+
+1. Elixir
+2. PostgreSQL
+3. Node (and NPM)
+4. Hex - `mix local.hex`
+5. Phoenix - `mix archive.install hex phx.new 1.4.9`
+
+> Note 1: For windows, please use the compiled packages option for Erlang and Elixir
+
+> Note 2: For phoenix, if you are behind a proxy and get an error in fetching the meta data files, then please download the phoenix archive and install it manually using the `archive.install /local/package.ez` option.
+
 # How to use the code base
 
 This code base was generated using the default phoenix generator `mix phx.new`. Additionally, authentication was added using [Guardian](https://github.com/ueberauth/guardian). Furthermore, basic CRUD operations are coded which allows one to create/update/read "tasks" (sample todo application).
@@ -41,3 +55,31 @@ This repo is hosted on heroku. Please click [here](elixir-todo-example.herokuapp
 Check out this [quick guide](https://github.com/dwyl/learn-heroku/blob/master/elixir-phoenix-app-deployment.md) on how to deploy an Elixir/Phoenix applicaiton on Heroku.
 
 Please check [prod.exs](config/prod.exs) for various `HTTP`, `Database` and `Redis` configurations.
+
+Check out [elixir_buildpack.config](elixir_buildpack.config) and [Procfile](Procfile) for configuration details (as mentioned in the quick guide link above).
+
+### Running the applicaiton
+
+First, setup database using `mix ecto.setup` or, if already setup, run pending migrations `mix ecto.migrate`.
+
+Then, run/debug application using,
+
+Run: `mix phx.server`
+Debug: `iex -S mix phx.server`
+
+Put breakpoint in your code using,
+
+```
+require IEx
+IEx.pry
+```
+
+Hope this helps and hope you enjoy learning this wonderful package.
+
+# Training Requirement
+
+If you require advance training for yourself or your team (if corporate) then feel free to reach me on [training@taher.me](mailto:training@taher.me)
+
+LinkedIn: [linkedin.com/in/tahernd/](https://www.linkedin.com/in/tahernd/)
+
+Website: [taher.me](https://taher.me)
