@@ -26,10 +26,10 @@ defmodule ElixirTodoWeb.Router do
   scope "/", ElixirTodoWeb do
     pipe_through [:browser, :auth]
 
-    get "/", PageController, :index
-
+    get "/", SessionController, :new
     get "/login", SessionController, :new
     post "/login", SessionController, :login
+    get "/logout", SessionController, :logout
   end
 
   # accessible with login

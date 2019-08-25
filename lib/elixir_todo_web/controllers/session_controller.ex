@@ -23,6 +23,12 @@ defmodule ElixirTodoWeb.SessionController do
     |> login_handler(conn)
   end
 
+  def logout(conn, _) do
+    conn
+    |> Guardian.Plug.sign_out(_opts = [])
+    |> redirect(to: "/login")
+  end
+
   defp login_handler({:ok, user}, conn) do
     conn
     |> put_flash(:info, "Welcome #{user.name}")
