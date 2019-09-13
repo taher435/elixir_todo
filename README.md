@@ -50,7 +50,7 @@ Please update the redis dev and prod config in [dev.exs](config/dev.exs) and [pr
 
 ## Heroku Deployment
 
-This repo is hosted on heroku. Please click [here](elixir-todo-example.herokuapp.com) to see the live demo.
+This repo is hosted on heroku. Please click [here](https://elixir-todo-example.herokuapp.com/) to see the live demo.
 
 Check out this [quick guide](https://github.com/dwyl/learn-heroku/blob/master/elixir-phoenix-app-deployment.md) on how to deploy an Elixir/Phoenix applicaiton on Heroku.
 
